@@ -96,12 +96,12 @@ function createHTML(id, taskName, isCompleted) {
                     <label for="check-${id}"><span role="text">${taskName}</span></label>
                 </div>
                 <div class="task-option-${id}">
-                    <img src="../icons/edit.svg" alt="edit svg" class="modify" id="edit" onclick="editTaskName(${id})">
-                    <img src="../icons/delete.svg" alt="delete svg" class="modify delete" onclick="deleteTask(${id})">
+                    <img src="icons/edit.svg" alt="edit svg" class="modify" id="edit" onclick="editTaskName(${id})">
+                    <img src="icons/delete.svg" alt="delete svg" class="modify delete" onclick="deleteTask(${id})">
                 </div>
                 <div class="edit-option-${id}" hidden>
-                    <img src="../icons/check.svg" alt="check svg" class="modify" id="save" onclick="saveName(${id}, 'save')">
-                    <img src="../icons/close.svg" alt="close svg" class="modify" id="close" onclick="saveName(${id}, 'close')">
+                    <img src="icons/check.svg" alt="check svg" class="modify" id="save" onclick="saveName(${id}, 'save')">
+                    <img src="icons/close.svg" alt="close svg" class="modify" id="close" onclick="saveName(${id}, 'close')">
                 </div>
             </div>
         `;
