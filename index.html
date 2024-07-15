@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Simple To Do List</title>
+</head>
+<body>
+    
+    <div class="banner">
+        <div class="banner-filter"></div>
+        <img src="../images/banner.png" alt="banner image">
+    </div>
+
+    <div class="content">
+        <h1>TO DO <span>LIST</span></h1>
+        <div class="add-task">
+            <input type="text" id="task-name" placeholder="Start typing">
+            <button onclick="createTask()">Create</button>
+        </div>
+        <div class="task-list">
+            <div class="your-task">
+                <!-- <div class="task">
+                    <div class="checkbox-wrapper-11">
+                        <input id="02-11" type="checkbox" name="r" value="1">
+                        <label for="02-11"><span role="text">1st Task</span></label>
+                    </div>
+                    <div class="task-option">
+                        <img src="../icons/edit.svg" alt="edit svg" class="modify" id="edit">
+                        <img src="../icons/delete.svg" alt="delete svg" class="modify delete" id="delete">
+                    </div>
+                    <div class="edit-option" hidden>
+                        <img src="../icons/check.svg" alt="check svg" class="modify" id="save">
+                        <img src="../icons/close.svg" alt="close svg" class="modify" id="close">
+                    </div>
+                </div>
+    
+                <div class="task">
+                    <div class="checkbox-wrapper-11">
+                        <input id="02-12" type="checkbox" name="r" value="2">
+                        <label for="02-12"><p class="task-info">2nd task</p></label>
+                    </div>
+                    <div class="task-option">
+                        <img src="../icons/edit.svg" alt="edit svg" class="modify">
+                        <img src="../icons/delete.svg" alt="delete svg" class="modify">
+                    </div>
+                    <div class="edit-option" hidden>
+                        <img src="../icons/check.svg" alt="check svg" class="modify">
+                        <img src="../icons/close.svg" alt="close svg" class="modify">
+                    </div>
+                </div>
+    
+                <div class="task">
+                    <div class="checkbox-wrapper-11">
+                        <input id="02-13" type="checkbox" name="r" value="3">
+                        <label for="02-13"><p class="task-info">3rd task</p></label>
+                    </div>
+                    <div class="task-option">
+                        <img src="../icons/edit.svg" alt="edit svg" class="modify">
+                        <img src="../icons/delete.svg" alt="delete svg" class="modify">
+                    </div>
+                    <div class="edit-option" hidden>
+                        <img src="../icons/check.svg" alt="check svg" class="modify">
+                        <img src="../icons/close.svg" alt="close svg" class="modify">
+                    </div>
+                </div> -->
+                
+            </div>
+
+            <div class="options">
+                <span>0 Item/s left</span>
+                <div class="segments">
+                    <span id="all" class="active" onclick="filterTask('all', this)">All</span>
+                    <span id="active" onclick="filterTask('active', this)">Active</span>
+                    <span id="completed" onclick="filterTask('completed', this)">Completed</span>
+                </div>
+                <button onclick="deleteAllTaskCompleted()">Clear Completed</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="../JS/script.js"></script>
+</html>

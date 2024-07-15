@@ -1,0 +1,531 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    padding: 5px;
+    position: relative;
+}
+
+.banner {
+    height: 50vh;
+    width: 100%;
+    position: relative;
+    border-radius: 20px;
+}
+
+.banner .banner-filter {
+    background-image: linear-gradient(to left, #44BCD3, #F4BAD3);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    filter: opacity(0.7);
+    border-radius: 20px;
+}
+
+.banner img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.content {
+    height: 70%;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.content h1 {
+    font-size: 4rem;
+    color: #f5f5f5;
+}
+
+.content h1 span {
+    letter-spacing: 0px;
+    margin-left: 10px;
+}
+
+.content .add-task {
+    background-color: #f5f5f5;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-block: 20px;
+    box-shadow: 0px 0px 10px #808080;
+}
+
+.content .add-task input {
+    flex-grow: 1;
+    font-size: 1.1rem;
+    border: none;
+    padding: 10px 5px
+}
+
+.content .add-task input:focus {
+    outline: none;
+}
+
+.content .add-task button {
+    background-color: #44BCD3;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #f5f5f5;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px #2f8191;
+}
+
+.content .task-list {
+    background-color: #f5f5f5;
+    height: 80%;
+    flex-grow: 1;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px #808080;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.content .task-list .your-task {
+    height: 100%;
+    overflow: auto;
+    padding-bottom: 50px;
+}
+
+.content .task-list .your-task .task {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    border-bottom: #8080803e solid 1px;
+}
+
+.checkbox-wrapper-11 {
+    --text: #050505;
+    --check: #131313;
+    --disabled: #808080;
+    --border-radius: 10px;
+    border-radius: var(--border-radius);
+    position: relative;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 30px auto;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.checkbox-wrapper-11 label {
+    color: var(--text);
+    position: relative;
+    cursor: pointer;
+    display: grid;
+    align-items: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    transition: color 0.3s ease;
+    margin-right: 10px;
+}
+
+.checkbox-wrapper-11 label::before,
+.checkbox-wrapper-11 label::after {
+    content: "";
+    position: absolute;
+}
+
+.checkbox-wrapper-11 label::before {
+    height: 3px;
+    width: 10px;
+    left: -27px;
+    background: var(--check);
+    border-radius: 2px;
+    transition: background 0.3s ease;
+}
+
+.checkbox-wrapper-11 label:after {
+    height: 2px;
+    width: 4px;
+    top: 8px;
+    left: -25px;
+    border-radius: 50%;
+}
+
+.checkbox-wrapper-11 input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    height: 15px;
+    width: 15px;
+    outline: none;
+    border: 0;
+    margin: 0 15px 0 0;
+    cursor: pointer;
+    background: var(--background);
+    display: grid;
+    align-items: center;
+}
+
+.checkbox-wrapper-11 input[type=checkbox]::before,
+.checkbox-wrapper-11 input[type=checkbox]::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    top: auto;
+    background: var(--check);
+    border-radius: 2px;
+}
+
+.checkbox-wrapper-11 input[type=checkbox]::before {
+    width: 0px;
+    right: 60%;
+    transform-origin: right bottom;
+}
+
+.checkbox-wrapper-11 input[type=checkbox]::after {
+    width: 0px;
+    left: 40%;
+    transform-origin: left bottom;
+}
+
+.checkbox-wrapper-11 input[type=checkbox]:checked::before {
+    -webkit-animation: check-01-11 0.4s ease forwards;
+    animation: check-01-11 0.4s ease forwards;
+}
+
+.checkbox-wrapper-11 input[type=checkbox]:checked::after {
+    -webkit-animation: check-02-11 0.4s ease forwards;
+    animation: check-02-11 0.4s ease forwards;
+}
+
+.checkbox-wrapper-11 input[type=checkbox]:checked+label {
+    color: var(--disabled);
+    -webkit-animation: move-11 0.3s ease 0.1s forwards;
+    animation: move-11 0.3s ease 0.1s forwards;
+}
+
+.checkbox-wrapper-11 input[type=checkbox]:checked+label::before {
+    background: var(--disabled);
+    -webkit-animation: slice-11 0.4s ease forwards;
+    animation: slice-11 0.4s ease forwards;
+}
+
+.checkbox-wrapper-11 input[type=checkbox]:checked+label::after {
+    -webkit-animation: firework-11 0.5s ease forwards 0.1s;
+    animation: firework-11 0.5s ease forwards 0.1s;
+}
+
+@-webkit-keyframes move-11 {
+    50% {
+        padding-left: 8px;
+        padding-right: 0px;
+    }
+
+    100% {
+        padding-right: 4px;
+    }
+}
+
+@keyframes move-11 {
+    50% {
+        padding-left: 8px;
+        padding-right: 0px;
+    }
+
+    100% {
+        padding-right: 4px;
+    }
+}
+
+@-webkit-keyframes slice-11 {
+    60% {
+        width: 100%;
+        left: 4px;
+    }
+
+    100% {
+        width: 100%;
+        left: -2px;
+        padding-left: 0;
+    }
+}
+
+@keyframes slice-11 {
+    60% {
+        width: 100%;
+        left: 4px;
+    }
+
+    100% {
+        width: 100%;
+        left: -2px;
+        padding-left: 0;
+    }
+}
+
+@-webkit-keyframes check-01-11 {
+    0% {
+        width: 4px;
+        top: auto;
+        transform: rotate(0);
+    }
+
+    50% {
+        width: 0px;
+        top: auto;
+        transform: rotate(0);
+    }
+
+    51% {
+        width: 0px;
+        top: 8px;
+        transform: rotate(45deg);
+    }
+
+    100% {
+        width: 5px;
+        top: 8px;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes check-01-11 {
+    0% {
+        width: 4px;
+        top: auto;
+        transform: rotate(0);
+    }
+
+    50% {
+        width: 0px;
+        top: auto;
+        transform: rotate(0);
+    }
+
+    51% {
+        width: 0px;
+        top: 8px;
+        transform: rotate(45deg);
+    }
+
+    100% {
+        width: 6px;
+        top: 8px;
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes check-02-11 {
+    0% {
+        width: 4px;
+        top: auto;
+        transform: rotate(0);
+    }
+
+    50% {
+        width: 0px;
+        top: auto;
+        transform: rotate(0);
+    }
+
+    51% {
+        width: 0px;
+        top: 8px;
+        transform: rotate(-45deg);
+    }
+
+    100% {
+        width: 10px;
+        top: 8px;
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes check-02-11 {
+    0% {
+        width: 4px;
+        top: auto;
+        transform: rotate(0);
+    }
+
+    50% {
+        width: 0px;
+        top: auto;
+        transform: rotate(0);
+    }
+
+    51% {
+        width: 0px;
+        top: 8px;
+        transform: rotate(-45deg);
+    }
+
+    100% {
+        width: 12px;
+        top: 8px;
+        transform: rotate(-45deg);
+    }
+}
+
+@-webkit-keyframes firework-11 {
+    0% {
+        opacity: 1;
+        box-shadow: 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        box-shadow: 0 -15px 0 0px #4F29F0, 14px -8px 0 0px #4F29F0, 14px 8px 0 0px #4F29F0, 0 15px 0 0px #4F29F0, -14px 8px 0 0px #4F29F0, -14px -8px 0 0px #4F29F0;
+    }
+}
+
+@keyframes firework-11 {
+    0% {
+        opacity: 1;
+        box-shadow: 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        box-shadow: 0 -15px 0 0px #4F29F0, 14px -8px 0 0px #4F29F0, 14px 8px 0 0px #4F29F0, 0 15px 0 0px #4F29F0, -14px 8px 0 0px #4F29F0, -14px -8px 0 0px #4F29F0;
+    }
+}
+
+.content .task-list .your-task .task .modify {
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+}
+
+.content .task-list .your-task .task .modify:hover {
+    cursor: pointer;
+}
+
+.content .task-list .options {
+    background-color: #eeeeee;
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0px -1px 3px #808080;
+    border-radius: 0 0 8px 8px;
+    display: flex;
+    align-items: center;
+    padding-inline: 20px;
+}
+
+.content .task-list .options>span {
+    flex-grow: 1;
+    font-size: 1rem;
+    color: #808080;
+}
+
+.content .task-list .options .segments {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+.content .task-list .options .segments>span {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1rem;
+    padding: 5px;
+    transition: all 0.5s ease;
+    max-width: 100px;
+}
+
+.content .task-list .options .segments>span:hover {
+    cursor: pointer;
+    color: #F4BAD3;
+}
+
+.content .task-list .options .segments>.active {
+    color: #ff6d6d;
+}
+
+.content .task-list .options button {
+    flex-grow: 1;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    background-color: transparent;
+    color: #808080;
+    transition: all 0.5s ease;
+}
+
+.content .task-list .options button:hover {
+    color: #a52a2a;
+}
+
+.content .task-list .options button:active {
+    color: #ff5656;
+}
+
+@media screen and (max-width: 700px) {
+    .content .task-list .options {
+        height: fit-content;
+        padding-block: 10px;
+        flex-wrap: wrap;
+        column-gap: 10px;
+        row-gap: 20px;
+    }
+
+    .content .task-list .options .segments {
+        order: 3;
+        width: 100%;
+    }
+
+    .content .task-list .options>span,
+    .content .task-list .options button {
+        padding: 5px;
+    }
+
+    .content .task-list .options button {
+        text-align: end;
+    }
+}
+
+@media screen and (max-width: 435px) {
+    .content .add-task {
+        flex-wrap: wrap;
+    }
+
+    .content .add-task input,
+    .content .add-task button {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .content .task-list .options>span,
+    .content .task-list .options button {
+        font-size: 0.9rem;
+    }
+}
